@@ -1,0 +1,4 @@
+https://www.npmjs.com/package/mqtt-pattern
+
+http://www.steves-internet-guide.com/understanding-mqtt-topics/
+

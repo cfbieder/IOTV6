@@ -1,0 +1,11 @@
+({
+  "send command to device": "cmd/X/MAC",
+  "X": { "get configuration file": "get_config" }
+},
+{
+  "recieve sensor data": "sensor/<name>/MAC"
+},
+{
+  "send device informaiton": "device/X/MAC",
+  "X": { "send configuation file": "config" }
+})

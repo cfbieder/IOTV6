@@ -1,0 +1,46 @@
+//Component
+
+{
+    "device": {
+        "MAC": "none",
+        "name": "thermometer",
+        "topic": "thermometer",
+        "tags": [
+            "temp",
+            "temperature"
+        ],
+        "info": [
+            "test case"
+        ]
+    },
+    "components": [
+        {
+            "name": "DSbTemp",
+            "type": "sensor",
+            "topic": "temperature",
+            "tags": [
+                "temp",
+                "temperature"
+            ],
+            "info": [
+                "test case"
+            ]
+        }
+    ]
+}
+//MQTT log
+{
+  "MAC" : String,
+  "data" : Schema.Types.Mixed
+}
+  )
+
+// MQTT Message Structure
+// sensor/<component>/<device>/<MAC>
+// actuator/<component>/<device>/<MAC>
+//
+// ex. sensor/temperature/+/+
+
+// send pub to identify, returns all mac
+// send pub to <MAC>/api returns documentation for pub/sub
+// send pub to <MAC>/description returns all default data on the device and components
