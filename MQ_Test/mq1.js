@@ -67,6 +67,8 @@ client.on("message", function (topic, message) {
   if (params.type == "device") mqtt_message_device(topic, obj);
 });
 
+//test
+
 const unsubscribe = () => {
   //client.unsubscribe(topic, function () {
   //  console.log("Unsubsribed");
