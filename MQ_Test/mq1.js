@@ -60,11 +60,15 @@ client.on("error", function (error) {
 });
 
 client.on("message", function (topic, message) {
-  obj = JSON.parse(message.toString());
-  var params = MQTTPattern.exec(pattern_messageType, topic);
-  console.log("Info:", "Component Message received: " + params.type);
-  if (params.type == "sensor") mqtt_message_sensor(topic, obj);
-  if (params.type == "device") mqtt_message_device(topic, obj);
+  try {
+    obj = JSON.parse(message.toString());
+    var params = MQTTPattern.exec(pattern_messageType, topic);
+    console.log("Info:", "Component Message received: " + params.type);
+    if (params.type == "sensor") mqtt_message_sensor(topic, obj);
+    if (params.type == "device") mqtt_message_device(topic, obj);
+  } catch (err) {
+    console.log("Error:", "Can not parse: " + message);
+  }
 });
 
 //test

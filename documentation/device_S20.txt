@@ -1,0 +1,14 @@
+
+PUBLISH
+	actuator/S20/ + mac :	Publish of state
+	device/config/ + mac : Publish configuration status
+SUBSCRIBE
+	cmd/get_config/ + mac : Subscribe request for configuarion file
+	cmd/turn_on/ + mac : Subscribe turn switch on
+	cmd/turn_off/ + mac : Subscribe turn switch off
+	cmd/get_reading/" + mac : Subscribe to get device state
+
+EXAMPLES
+	cmd/get_reading/DC:4F:22:37:B5:C7
+	cmd/turn_on/DC:4F:22:37:B5:C7
+	cmd/turn_off/DC:4F:22:37:B5:C7

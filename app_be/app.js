@@ -16,18 +16,16 @@ var logRouter = require("./routes/logRouter");
 
 config = require("./config");
 
+var cors = require("cors");
+var corsOptions = {
+  origin: "http://192.168.1.251:3000",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 var app = express();
 
 // Allow Cross Origin
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Cache-Control, Pragma, Origin, Authorization,   x-access-token, Content-Type, X-Requested-With"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  return next();
-});
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
