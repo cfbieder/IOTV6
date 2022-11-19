@@ -1,14 +1,60 @@
 
 PUBLISH
-	actuator/S20/ + mac :	Publish of state
-	device/config/ + mac : Publish configuration status
-SUBSCRIBE
-	cmd/get_config/ + mac : Subscribe request for configuarion file
-	cmd/turn_on/ + mac : Subscribe turn switch on
-	cmd/turn_off/ + mac : Subscribe turn switch off
-	cmd/get_reading/" + mac : Subscribe to get device state
+	actuator/S20/ + mac	: Publish of state
+	device/config/ + mac	: Publish configuration status
+	device/poll		: Returns MAC
 
-EXAMPLES
+SUBSCRIBE
+	cmd/get_config/ + mac	: Subscribe request for configuarion file
+	cmd/turn_on/ + mac	: Subscribe turn switch on
+	cmd/turn_off/ + mac	: Subscribe turn switch off
+	cmd/get_reading/" + mac : Subscribe to get device state
+	cmd/location/+mac	: Change name of the location
+	cmd/flash/+mac		: Toggle lash the led to enable quick indentify
+
+
+EXAMPLE CLIENT SEND
 	cmd/get_reading/DC:4F:22:37:B5:C7
 	cmd/turn_on/DC:4F:22:37:B5:C7
 	cmd/turn_off/DC:4F:22:37:B5:C7
+	cmd/get_config/DC:4F:22:37:B5:C7
+	cmd/location/DC:4F:22:37:B5:C7			: <<location name>>
+	cmd/flash/DC:4F:22:37:B5:C7
+
+EXAMPLE CLIENT SUBSCRIBE
+	device/#
+	actuator/S20/#
+
+
+
+DATA
+{
+    "device": {
+        "MAC": "{{MAC}}",
+        "name": "powerswitch",
+        "topic": "powerswitch",
+        "location" : "{{LOCATION}}",
+        "version" : "V1.1 - 2022.11.19",
+        "tags": [
+            "switch",
+            "power"
+        ],
+        "info": [
+            "test case"
+        ]
+    },
+    "components": [
+        {
+            "name": "S20Switch",
+            "type": "actuator",
+            "topic": "powerswitch",
+            "tags": [
+                "switch",
+                "power"
+            ],
+            "info": [
+                "test case"
+            ]
+        }
+    ]
+}
