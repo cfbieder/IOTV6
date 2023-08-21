@@ -1,0 +1,25 @@
+
+PUBLISH
+	sensor/DSbTemp/ + mac	: Publish of state
+	device/config/ + mac	: Publish configuration status
+	device/poll		: Returns MAC
+
+
+
+SUBSCRIBE
+	cmd/get_config/ + mac	: Subscribe request for configuarion file
+	cmd/get_reading/" + mac : Subscribe to get device state
+	cmd/location/+mac	: Change name of the location
+	cmd/flash/+mac		: Toggle lash the led to enable quick indentify
+	device/poll		: Returns MAC
+
+
+EXAMPLE CLIENT SEND
+
+
+EXAMPLE CLIENT SUBSCRIBE
+
+
+
+
+DATA

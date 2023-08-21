@@ -5,4 +5,5 @@ module.exports = {
   topics: ["sensor/#", "test/#", "device/#", "cmd/#"],
   ports: { update: 8000, appin: 8001 }, //port 8000 used to send change notification from devices to apps
   debug_mode: true,
+  options : { username:"cfbieder", password:"PSi4y!S43i"},
 };

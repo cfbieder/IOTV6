@@ -1,0 +1,25 @@
+
+PUBLISH
+	sensor/PMSair/ + mac	: Publish of state
+	device/config/ + mac	: Publish configuration status
+	device/poll		: Returns MAC in payload
+
+SUBSCRIBE
+	cmd/get_config/ + mac	: Subscribe request for configuarion file
+	cmd/location/+mac	: Change name of the location
+	cmd/delay/+mac : Change cycle time for read and publish
+	device/poll		: Returns MAC
+
+
+EXAMPLE CLIENT SEND
+
+
+EXAMPLE CLIENT SUBSCRIBE
+
+	cmd/location/A4:CF:12:1C:BC:1C
+	cmd/get_config/A4:CF:12:1C:BC:1C
+	cmd/delay/A4:CF:12:1C:BC:1C
+	
+
+
+DATA

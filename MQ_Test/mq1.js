@@ -6,7 +6,7 @@ var MQTTPattern = require("mqtt-pattern");
 var config = require("./config");
 
 //get MQTT client
-var client = mqtt.connect(config.mqttUrl);
+var client = mqtt.connect(config.mqttUrl,config.options);
 var pattern_messageType = "+type/#other";
 var pattern_messageSensor = "sensor/+component/+mac";
 var pattern_messageDevice = "device/+info/+mac";
